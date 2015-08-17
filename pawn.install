@@ -1,0 +1,13 @@
+post_install() {
+	ln -s /usr/lib/pawn/bin/pawncc /usr/bin/pawncc 
+	ln -s /usr/lib/pawn/bin/pawnrun /usr/bin/pawnrun 
+	ln -s /usr/lib/pawn/bin/pawndisasm /usr/bin/pawndisasm 
+}
+
+post_upgrade() {
+	post_install 
+}
+
+post_remove() {
+	rm -f /usr/bin/{pawncc,pawnrun,pawndisasm}
+}
